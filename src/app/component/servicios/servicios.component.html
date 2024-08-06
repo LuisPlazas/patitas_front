@@ -1,0 +1,15 @@
+<!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="">Baño Perruno</button>
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="">Consulta medica</button>
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="">Guarderia perruna</button> -->
+
+
+@if (servicioSolicitado == "lavado") {
+  <h1>Baño</h1>
+  <full-calendar [options]="calendarOptions" ></full-calendar>
+}@else if (servicioSolicitado == "consulta") {
+  <h1>Consulta</h1>
+  <full-calendar [options]="calendarOptions" ></full-calendar>
+}@else if (servicioSolicitado == "guarderia") {
+  <h1>Guarderia</h1>
+  <full-calendar [options]="calendarOptions" ></full-calendar>
+}

@@ -1,0 +1,12 @@
+img{
+  height: 90px;
+  width: 90px;
+  border-radius: 50px;
+  margin-top: 2px;
+}
+
+
+  .row{
+    background-image: url('/Img/fondo-perros.JPG');
+    }
+

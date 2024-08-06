@@ -1,0 +1,43 @@
+:host {
+    --color_titulo: #8943d3;
+    --color_texto-btn: #DFEE09;
+    --color_fondo_btn: #8943d3;
+    --color_linea: #8943d3;
+    --tipo_letra:'Courier New', Courier, monospace;
+}
+
+.img-adocion {
+    width: 330px;
+    height: auto;
+    margin: 10px 0 10px 200px;
+}
+
+#p-importancia-d-adptar {
+    margin: 10px 100px;
+    text-align: justify;
+    font-family: var(--tipo_letra);
+}
+
+#titulo {
+    color: var(--color_titulo);
+    font-size: 24px;
+    font-weight: bold;
+    font-family: var(--tipo_letra); 
+    text-align: center;
+    margin: 20px auto;
+    padding: 10px;
+}
+
+.linea {
+    border-bottom: 2px solid var(--color_linea); 
+}
+
+.btn-adopcion {
+    color: var(--color_texto-btn);
+    background-color: var(--color_fondo_btn);
+    border: none;
+    border-radius: 10px;
+    padding: 5px 10px;
+    margin: 0 100px;
+}
+

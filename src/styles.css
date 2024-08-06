@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+  background: #dedfb5a2 !important;
+}
+
+@font-face {
+  font-family: "tipografiaPatitas";
+  src: url(/fonts/Watermelon.ttf);
+
+}
+
+
+.tipografiaPagina{
+  font-family: "tipografiaPatitas"
+  }
