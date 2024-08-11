@@ -1,4 +1,4 @@
-:host {
+/* :host {
     --color_titulo: #8943d3;
     --color_texto-btn: #DFEE09;
     --color_fondo_btn: #8943d3;
@@ -23,4 +23,37 @@ img {
 
 .card {
     min-height: 450px;
+} */
+
+:host {
+    --color_titulo: #8943d3;
+    --color_texto-btn: #DFEE09;
+    --color_fondo_btn: #8943d3;
+    --color_linea: #8943d3;
+    --tipo_letra:'Courier New', Courier, monospace;
 }
+
+img {
+    max-width: 310px;
+    height: 196px;
+}
+
+#titulo-adoptame {
+    color: var(--color_titulo);
+    font-size: 24px;
+    font-weight: bold;
+    font-family: var(--tipo_letra);
+    text-align: center;
+    margin: 20px auto;
+    padding: 10px;
+}
+
+.card {
+    min-height: 450px;
+}
+
+
+  /* Media query  */
+
+
+
