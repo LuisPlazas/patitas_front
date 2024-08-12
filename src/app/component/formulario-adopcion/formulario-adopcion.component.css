@@ -4,13 +4,14 @@
     --color_fondo_btn: #8943d3;
     --color_linea: #8943d3;
     --tipo_letra:'Courier New', Courier, monospace;
+    --boder-solid: #ccc;
 }
 
 form {
     width: 80%;
     margin: 0 auto;
     padding: 20px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--boder-solid);
     border-radius: 5px;
     margin-top: 20px;
 }
@@ -24,7 +25,7 @@ input, select {
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--boder-solid);
     border-radius: 3px;
 }
 
@@ -41,4 +42,8 @@ button {
     color: var(--color_titulo);
     font-size: 24px;
     text-align: center;
+}
+
+#regresar_formulario_adopcion {
+    margin-left: 78%;
 }
