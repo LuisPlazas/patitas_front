@@ -49,11 +49,7 @@ img {
 }
 
 .card {
-    min-height: 450px;
+    max-width: 95%;
+    min-height: 90%
+    /* min-height: 450px; */
 }
-
-
-  /* Media query  */
-
-
-

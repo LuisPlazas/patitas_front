@@ -1,7 +1,8 @@
 <form>
     <div class="row">
+        <p id="formulario-adopcion">FOMULARIO DE ADOPCIÓN</p>
         <div class="col-6">
-            <label>Fecha:</label>
+            <label>Fecha de solicitud:</label>
             <input type="text" id="fecha" formControlName="fecha">
         </div>
 
@@ -33,7 +34,7 @@
         <div class="col-6">
             <label>Gato:</label>
             <select class="form-select" id="inputGroupSelect01" required>
-            <option selected>Seleccione genero...</option>
+            <option selected>Seleccione nombre del gato...</option>
             <option value="1">KITTY</option>
             <option value="2">MAGGIE</option>
             <option value="3">MAX</option>
@@ -44,13 +45,32 @@
         <div class="col-6">
             <label>PERRO:</label>
             <select class="form-select" id="inputGroupSelect01" required>
-            <option selected>Seleccione genero...</option>
-            <option value="1">JACKO</option>
-            <option value="2">RAMBO</option>
-            <option value="3">OTROS</option>
-        </select>
+                <option selected>Seleccione nombre del perro...</option>
+                <option value="1">JACKO</option>
+                <option value="2">RAMBO</option>
+                <option value="3">OTROS</option>
+            </select>
         </div>
-        
+        <div class="col-6">
+            <label>Tiene otra mascota:</label>
+            <select class="form-select" id="inputGroupSelect01" required>
+                <option selected>Seleccione alguna opcion SI/NO...</option>
+                <option value="1">SI</option>
+                <option value="2">NO</option>
+            </select>
+        </div>
+        <div class="col-6">
+            <label>Cual es :</label>
+            <select class="form-select" id="inputGroupSelect01" required>
+                <option selected>Seleccione alguna opciones...</option>
+                <option value="1">AVES</option>
+                <option value="2">PERROS</option>
+                <option value="3">GATOS</option>
+                <option value="4">CONEJOS</option>
+                <option value="5">OTROS</option>            
+            </select>
+        </div>
     </div>
     <button type="submit">Enviar</button>
+    <button id="">Regresar</button>
 </form>
