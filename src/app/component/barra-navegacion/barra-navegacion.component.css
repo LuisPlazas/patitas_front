@@ -1,3 +1,10 @@
+:host {
+  --color-bodrer:#FFFFFF;
+  --color-fondo-btn: #fff;
+  --boder-btn:2px;
+  --color-titulo: #000;
+}
+
 img{
   height: 90px;
   width: 90px;
@@ -5,8 +12,54 @@ img{
   margin-top: 2px;
 }
 
+.text-color-barra {
+  color: var(--color-titulo);
+}
 
-  .row{
-    background-image: url('/Img/fondo-perros.JPG');
-    }
+/* img{
+  height: 90px;
+  width: 90px;
+  border-radius: 50px;
+  margin-top: 2px;
+} */
 
+.row{
+  background-image: url('/Img/fondo-perros.JPG');
+}
+
+#input-barra {
+  border-radius: 20px 0 0 20px;
+  border: var(--color-bodrer) solid var(--boder-btn);
+}
+
+#btn-barra {
+  border-radius: 0 20px 20px 0;
+  padding: 5px 10px;
+  background-color: var(--color-fondo-btn);
+  border: var(--color-bodrer) solid var(--boder-btn);
+}
+
+/* ACA COMIENZA LA @MEDIA */
+
+img {
+  height: 90px;
+  width: 90px;
+  border-radius: 50%; /* Usamos 50% para asegurar una forma circular */
+  margin-top: 2px;
+}
+
+/* Media query para pantallas pequeñas */
+@media (max-width: 768px) {
+  img {
+    height: 70px;
+    width: 70px;
+  }
+}
+
+/* Media query para pantallas más pequeñas */
+@media (max-width: 480px) {
+  img {
+    height: 50px;
+    width: 50px;
+  }
+}

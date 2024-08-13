@@ -1,3 +1,7 @@
+:host {
+    --color-border: #ccc ;
+}
+
 body {
     font-family: sans-serif;
     margin: 0;
@@ -8,7 +12,7 @@ body {
     width: 400px;
     margin: 50px auto;
     padding: 20px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--color-border);
 }
 
 h1 {
@@ -26,8 +30,15 @@ input[type="email"],
 input[type="password"] {
     width: 100%;
     padding: 8px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--color-border);
     margin-bottom: 15px;
+}
+
+select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid var(--color-border);
+    margin-bottom: 15px; 
 }
 
 button {
