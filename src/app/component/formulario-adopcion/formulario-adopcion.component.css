@@ -1,0 +1,49 @@
+:host {
+    --color_titulo: #8943d3;
+    --color_texto-btn: #DFEE09;
+    --color_fondo_btn: #8943d3;
+    --color_linea: #8943d3;
+    --tipo_letra:'Courier New', Courier, monospace;
+    --boder-solid: #ccc;
+}
+
+form {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid var(--boder-solid);
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid var(--boder-solid);
+    border-radius: 3px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#formulario-adopcion {
+    color: var(--color_titulo);
+    font-size: 24px;
+    text-align: center;
+}
+
+#regresar_formulario_adopcion {
+    margin-left: 78%;
+}

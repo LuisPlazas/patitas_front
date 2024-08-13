@@ -7,6 +7,7 @@ import { CompraComponent } from './component/compra/compra.component';
 import { LoginComponent } from './component/login/login.component';
 import { RegistroComponent } from './component/registro/registro.component';
 import { AdopcionComponent } from './component/adopcion/adopcion.component';
+import { FormularioAdopcionComponent } from './component/formulario-adopcion/formulario-adopcion.component';
 
 
 export const routes: Routes = [
@@ -33,7 +34,11 @@ export const routes: Routes = [
   },
   {
     path: 'adopcion', component: AdopcionComponent
+  },
+  {
+    path: 'formulario-adopcion', component: FormularioAdopcionComponent
   }
+
 
 ]
 
