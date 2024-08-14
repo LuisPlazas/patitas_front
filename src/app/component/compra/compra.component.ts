@@ -25,6 +25,32 @@ export class CompraComponent {
     this.dataCarrito = JSON.parse(data)
   }
 
+
+pagocarrito(){
+  Swal.fire({
+    title: "Estas seguro?",
+    text: "Estas a punto de realizar la compra ",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "pagar"
+  }).then((result) => {
+    if (result.isConfirmed) {
+      localStorage.removeItem("carrito")
+      let data:any =localStorage.getItem("carrito")
+      this.dataCarrito = JSON.parse(data)
+      Swal.fire({
+        title: "Tú compra fue exitosa",
+        text: ("Tú compra fue exitosa"),
+        icon: "success"
+      });
+    }
+  });
+
+}
+
+
   eliminarCarrito(){
     Swal.fire({
       title: "Estas seguro?",
