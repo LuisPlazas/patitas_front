@@ -39,27 +39,34 @@ img{
   border: var(--color-bodrer) solid var(--boder-btn);
 }
 
-/* ACA COMIENZA LA @MEDIA */
-
 img {
   height: 90px;
   width: 90px;
-  border-radius: 50%; /* Usamos 50% para asegurar una forma circular */
+  border-radius: 50%; 
   margin-top: 2px;
 }
 
+/* ACA COMIENZA LA @MEDIA */
+
+/* img {
+  height: 90px;
+  width: 90px;
+  border-radius: 50%; 
+  margin-top: 2px;
+} */
+
 /* Media query para pantallas pequeñas */
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   img {
     height: 70px;
     width: 70px;
   }
-}
+} */
 
 /* Media query para pantallas más pequeñas */
-@media (max-width: 480px) {
+/* @media (max-width: 480px) {
   img {
     height: 50px;
     width: 50px;
   }
-}
+} */
