@@ -13,18 +13,30 @@ import { AccesoriosComponent } from '../accesorios/accesorios.component';
 })
 export class CompraComponent {
 
+  dataCarrito:any[]=[]
+  cantidadproductos:number= 0;
+  totalprecio:number = 0;
+
   constructor(private router: Router){}
+
+  ngOnInit():void{
+    this.actualizarCarrito()
+    this.actulizarCantidadYTotal()
+  }
+
+  actualizarCarrito():void{
+    let data:any = localStorage.getItem("carrito")
+    this.dataCarrito = data ? JSON.parse(data) : [];
+  }
+
+  actulizarCantidadYTotal():void{
+    this.cantidadproductos=this.dataCarrito.reduce((acc,productos)=>acc+productos.cantidad,0);
+    this.totalprecio=this.dataCarrito.reduce((acc,productos)=>acc+(productos.cantidad*productos.precio),0);
+  }
+
   regresarcompra(){
     this.router.navigate(['accesorios'])
   }
-
-  dataCarrito:any
-
-  ngOnInit():void{
-    let data:any = localStorage.getItem("carrito")
-    this.dataCarrito = JSON.parse(data)
-  }
-
 
 pagocarrito(){
   Swal.fire({
@@ -50,8 +62,7 @@ pagocarrito(){
 
 }
 
-
-  eliminarCarrito(){
+eliminarCarrito(){
     Swal.fire({
       title: "Estas seguro?",
       text: "Estas a punto de cancelar tu compra",
