@@ -1,5 +1,5 @@
 <section>
-  <div class="container my-5">
+  <div class="container my-lg-5">
     <div class="row">
         <h3 class="fw-bold">Resumen de tu compra</h3>
         <hr>
@@ -17,7 +17,7 @@
               }
             </section>
             <div class="d-flex justify-content-end">
-              <button type="button"  class="btn btn-primary px-4 py-3 fw-bold" id="btn-regresar-carro">Regresar a compra</button>
+              <button type="button" (click)="regresarcompra()" class="btn btn-primary px-4 py-3 fw-bold" id="btn-regresar-carro">Regresar a compra</button>
                 <button type="button" (click)="eliminarCarrito()" class="btn btn-danger px-4 py-3 fw-bold" id="btn-borrar-carro">Eliminar carrito</button>
             </div>
         </div>
@@ -26,7 +26,7 @@
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item d-flex justify-content-center align-items-start py-3 flex-column">
                         <h6 class="m-0 d-flex justify-content-between w-100 px-4">
-                            <span class="fw-bold">Total de productos:</span><span>4</span>
+                            <span class="fw-bold">Total de productos:</span><span>{{cantidadproductos}}</span>
                         </h6>
                     </li>
                     <li class="list-group-item d-flex justify-content-center align-items-start py-3 flex-column">
@@ -54,7 +54,7 @@
                     <li class="list-group-item d-flex justify-content-center align-items-start py-3 flex-column">
                         <h3 class="m-0 d-flex justify-content-between w-100">
                             <span>Total a pagar:</span>
-                            <span>$ 687.000</span>
+                            <span>{{totalprecio.toFixed(2)}}</span>
                         </h3>
                     </li>
 
@@ -92,7 +92,7 @@
                     </li>
                 </ul>
             </div>
-            <button class="btn btnPagar btn-primary mt-3 fw-bold w-100 py-3">Proceder al pago</button>
+            <button class="btn btnPagar btn-primary mt-3 fw-bold w-100 py-3" (click)="pagocarrito()">Proceder al pago</button>
         </div>
     </div>
 </div>
