@@ -31,8 +31,24 @@ export class CompraComponent {
   }
 
   actulizarCantidadYTotal(): void {
-    this.cantidadproductos = this.dataCarrito.reduce((acc, productos) => acc + Number(productos.cantidad), 0);
-    this.totalprecio = this.dataCarrito.reduce((acc, productos) => acc + (Number(productos.cantidad) * Number(productos.precio)), 0);
+    this.cantidadproductos = this.dataCarrito.reduce((acc, productos) => {
+      // Convertir la cantidad a número
+      const cantidad = Number(productos.cantidad);
+      if (isNaN(cantidad)) {
+        return acc; // Ignorar si no es un número válido
+      }
+      return acc + cantidad;
+    }, 0);
+
+    this.totalprecio = this.dataCarrito.reduce((acc, productos) => {
+      // Convertir el precio a número después de eliminar posibles comas u otros caracteres no numéricos
+      const cantidad = Number(productos.cantidad);
+      const precio = parseFloat(productos.precio.replace(/[^0-9.-]+/g,""));
+      if (isNaN(cantidad) || isNaN(precio)) {
+        return acc; // Ignorar si alguno no es un número válido
+      }
+      return acc + (cantidad * precio);
+    }, 0);
   }
 
   regresarcompra(){
@@ -63,28 +79,28 @@ pagocarrito(){
 
 }
 
-eliminarProducto(index:number):void{
-  Swal.fire({
-    title: "¿Estás seguro?",
-    text: "¿Deseas eliminar este producto del carrito?",
-    icon: "warning",
-    showCancelButton: true,
-    confirmButtonColor: "#3085d6",
-    cancelButtonColor: "#d33",
-    confirmButtonText: "Eliminar"
-  }).then((result) => {
-    if (result.isConfirmed) {
-      this.dataCarrito.splice(index, 1);
-      localStorage.setItem('carrito', JSON.stringify(this.dataCarrito));
-      this.actulizarCantidadYTotal();
-      Swal.fire({
-        title: "Producto eliminado",
-        text: "El producto fue eliminado del carrito.",
-        icon: "success"
-      });
-    }
-  });
-}
+// eliminarProducto(index:number):void{
+//   Swal.fire({
+//     title: "¿Estás seguro?",
+//     text: "¿Deseas eliminar este producto del carrito?",
+//     icon: "warning",
+//     showCancelButton: true,
+//     confirmButtonColor: "#3085d6",
+//     cancelButtonColor: "#d33",
+//     confirmButtonText: "Eliminar"
+//   }).then((result) => {
+//     if (result.isConfirmed) {
+//       this.dataCarrito.splice(index, 1);
+//       localStorage.setItem('carrito', JSON.stringify(this.dataCarrito));
+//       this.actulizarCantidadYTotal();
+//       Swal.fire({
+//         title: "Producto eliminado",
+//         text: "El producto fue eliminado del carrito.",
+//         icon: "success"
+//       });
+//     }
+//   });
+// }
 
 eliminarCarrito(){
   Swal.fire({
@@ -109,6 +125,40 @@ eliminarCarrito(){
   });
 
 }
+
+
+////////////////////////
+eliminarProducto(index:number):void{
+  Swal.fire({
+    title: "¿Estás seguro?",
+    text: "¿Deseas eliminar este producto del carrito?",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Eliminar"
+  }).then((result) => {
+    if (result.isConfirmed) {
+      let data:any =localStorage.getItem("carrito")
+      this.dataCarrito = JSON.parse(data)
+      for (let i = 0; i < this.dataCarrito.length; i++) {
+        const element = this.dataCarrito[i];
+        if (element._id === index) {
+          this.dataCarrito.splice(i, 1);
+          localStorage.setItem('carrito', JSON.stringify(this.dataCarrito));
+          this.actulizarCantidadYTotal();
+          Swal.fire({
+            title: "Producto eliminado",
+            text: "El producto fue eliminado del carrito.",
+            icon: "success"
+          });
+        }
+
+      }
+    }
+  });
+}
+
 }
 
 
