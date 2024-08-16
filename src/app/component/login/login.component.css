@@ -1,5 +1,9 @@
 :host {
     --color-texto: #DFEE09;
+    --color-hover: #007bff;
+    --color-btn: #A084BE;
+    --color-background: #fff;
+    --color-border:#A084BE;
 }
 
 
@@ -15,13 +19,13 @@ h1 {
     margin-bottom: 20px;
 }
 
-form {
+#from-div {
     width: 300px;
     margin: 0 auto;
     padding: 20px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--color-border);
     border-radius: 5px;
-    background-color: #fff;
+    background-color: var(--color-background);
 }
 
 label {
@@ -33,20 +37,29 @@ input[type="text"],
 input[type="password"] {
     width: 100%;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--color-border);
     border-radius: 3px;
-}
-
-button {
-    width: 100%;
-    padding: 10px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
 }
 
 button:hover {
     background-color: #0056b3;
 }
+
+#form-login {
+    margin-top: 10%;
+}
+#btn-login {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--color-btn);
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-top: 10%;
+}
+
+#btn-login:hover {
+    background-color: var(--color-hover);
+}
+
