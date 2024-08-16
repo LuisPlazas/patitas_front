@@ -7,3 +7,9 @@
 .card {
   background-color: rgba(127, 32, 190, 0.205);
 }
+
+.nombreDesc{
+  display: flex;
+  margin: 0 20px 0 182px;
+}
+

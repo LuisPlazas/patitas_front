@@ -1,23 +1,26 @@
 <section>
-  <div class="container my-lg-5">
+<div class="container my-lg-5">
     <div class="row">
         <h3 class="fw-bold">Resumen de tu compra</h3>
         <hr>
         <div class="col-12 col-lg-8">
             <section  id="lista-productos">
-              @for (item of dataCarrito; track item._id) {
+            @for (item of dataCarrito; track item._id) {
                 <div class="card d-flex justify-content-center align-content-center">
-                  <div class="imgProducto d-flex justify-content-center align-content-center" [style]="'background: url('+item.imagen+')'">
-                    <h4 class=" px-lg-1 py-lg-5">{{item.nombre_producto}}</h4>
-                    <h5 class=" px-lg-1 py-lg-5">{{item.descripcion}}</h5>
-                    <h6 class=" px-lg-1 py-lg-5">{{item.precio}}</h6>
+                <div class="imgProducto d-flex justify-content-center align-content-center" [style]="'background: url('+item.imagen+')'">
+                  <div class="nombreDesc my-auto fs-4">
+                    <p class="my-auto me-1">{{item.nombre_producto}}</p>
+                    <p class="my-auto">{{item.descripcion}}</p>
                   </div>
+                    <p class="px-lg-1 py-lg-5 my-auto fs-4">$ {{item.precio | numberFormat}}</p>
+                    <button (click)="eliminarProducto(item._id)" class="ms-auto h-25 my-auto me-2 border-0 bg-transparent text-danger"><i class="fa-solid fa-trash-can"></i></button>
+                </div>
 
                 </div>
-              }
+            }
             </section>
             <div class="d-flex justify-content-end">
-              <button type="button" (click)="regresarcompra()" class="btn btn-primary px-4 py-3 fw-bold" id="btn-regresar-carro">Regresar a compra</button>
+            <button type="button" (click)="regresarcompra()" class="btn btn-primary px-4 py-3 fw-bold" id="btn-regresar-carro">Regresar a compra</button>
                 <button type="button" (click)="eliminarCarrito()" class="btn btn-danger px-4 py-3 fw-bold" id="btn-borrar-carro">Eliminar carrito</button>
             </div>
         </div>
@@ -54,7 +57,7 @@
                     <li class="list-group-item d-flex justify-content-center align-items-start py-3 flex-column">
                         <h3 class="m-0 d-flex justify-content-between w-100">
                             <span>Total a pagar:</span>
-                            <span>{{totalprecio.toFixed(2)}}</span>
+                            <span>$ {{totalprecio | numberFormat}}</span>
                         </h3>
                     </li>
 
