@@ -1,7 +1,6 @@
 .img-spa {
   display: block;
   width: 100%;
-
 }
 
 .imgProducto{
@@ -15,7 +14,16 @@
 }
 
 .card {
-  height: 100%;
+  height: 70%;
   width: 100%;
   object-fit: cover;
+}
+
+.row{
+  margin-right: 0;
+}
+
+.dimensiones-image {
+  flex: 0 0 auto;
+  width: 16.333333%;
 }

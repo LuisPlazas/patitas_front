@@ -10,10 +10,18 @@
   height: 140vh;
 }
 
+.container{
+  padding: 0;
+}
+
 /* .container-fluid {
   margin:0 10px 0 0 !important;
 
 } */
+
+i {
+  margin: 0 30%;
+}
 
 button {
   /* color: rgb(223, 238, 9); */
@@ -24,6 +32,7 @@ button {
   background: var(--decoracion);
   font-weight: 600;
   font-family: 'Poppins', sans-serif;
+  margin: 0 50%
 }
 
 button::before, button::after {
