@@ -3,27 +3,14 @@
   width: 100%;
 }
 
-.imgProducto{
-  height: 100%;
-  width: 100%;
-  background-position: center !important;
-  background-repeat: no-repeat !important;
-  background-size: contain !important;
-  /* border-radius: 70px !important; */
-  margin-bottom: 20px;
-}
-
-.card {
-  height: 70%;
-  width: 100%;
-  object-fit: cover;
-}
-
 .row{
   margin-right: 0;
 }
 
-.dimensiones-image {
-  flex: 0 0 auto;
-  width: 16.333333%;
+.dimensiones-image  img{
+  max-height: 200vh;
 }
+
+
+
+
