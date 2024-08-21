@@ -41,15 +41,18 @@ export class CompraComponent {
     }, 0);
 
     this.totalprecio = this.dataCarrito.reduce((acc, productos) => {
-      // Convertir el precio a número después de eliminar posibles comas u otros caracteres no numéricos
       const cantidad = Number(productos.cantidad);
-      const precio = parseFloat(productos.precio.replace(/[^0-9.-]+/g,""));
+      const precio = typeof productos.precio === 'string'
+        ? parseFloat(productos.precio.replace(/[^0-9.-]+/g, ''))
+        : productos.precio; // Si precio ya es un número, úsalo directamente
+
       if (isNaN(cantidad) || isNaN(precio)) {
         return acc; // Ignorar si alguno no es un número válido
       }
       return acc + (cantidad * precio);
     }, 0);
   }
+
 
   regresarcompra(){
     this.router.navigate(['accesorios'])
@@ -116,6 +119,7 @@ eliminarCarrito(){
     localStorage.removeItem("carrito")
   let data:any =localStorage.getItem("carrito")
   this.dataCarrito = JSON.parse(data)
+  this.actulizarCantidadYTotal();
       Swal.fire({
         title: "Tu compra fue eliminada",
         text: ("Tú compra fue eliminada"),
@@ -147,6 +151,7 @@ eliminarProducto(index:number):void{
           this.dataCarrito.splice(i, 1);
           localStorage.setItem('carrito', JSON.stringify(this.dataCarrito));
           this.actulizarCantidadYTotal();
+          this.actualizarCarrito();
           Swal.fire({
             title: "Producto eliminado",
             text: "El producto fue eliminado del carrito.",
