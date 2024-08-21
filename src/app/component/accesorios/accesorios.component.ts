@@ -24,6 +24,8 @@ export class AccesoriosComponent {
     this.obtenerProductos()
     if(localStorage.getItem("carrito") != null){
       let data:any = localStorage.getItem("carrito")
+      console.log(data);
+      
       this.dataCarritoLS = JSON.parse(data)
     }
   }
